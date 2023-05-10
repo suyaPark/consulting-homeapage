@@ -1177,6 +1177,10 @@ section {
   font-family: var(--font-primary);
   font-size: 14px;
 }
+.inform {
+  padding-top: 50px;
+  text-align: start;
+}
 
 /*--------------------------------------------------------------
 # Our Team Section

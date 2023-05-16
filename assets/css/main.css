@@ -1100,6 +1100,27 @@ section {
     font-size: 16px;
   }
 }
+.outsorcinginfo1 {
+  background-color: #ffffff; /* Change this to the desired color */
+  padding: 20px;
+  margin-top: 30px;
+}
+.outsorcinginfo2 {
+  background-color: #fafafa; /* Change this to the desired color */
+  padding: 20px;
+  margin-top: 30px;
+}
+.outsourcinghow h5 {
+  padding: 10px;
+  margin-top: 10px;
+}
+.im1, .im2, .im3, .im4, .im5 {
+  margin: 20px;
+}
+.outsourcinghow p {
+  padding: 20px;
+  margin-top: 30px;
+}
 
 /*--------------------------------------------------------------
 # About Section

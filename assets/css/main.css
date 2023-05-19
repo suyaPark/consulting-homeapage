@@ -1100,6 +1100,7 @@ section {
     font-size: 16px;
   }
 }
+
 .outsorcinginfo1 {
   background-color: #ffffff; /* Change this to the desired color */
   padding: 20px;
@@ -1122,6 +1123,24 @@ section {
   margin-top: 30px;
 }
 
+
+.headhungtingdescribe {
+  object-fit: cover;
+}
+.headuingting {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+
+
+.outsorcinginfo4 {
+  background-color: #fbf9f4;
+}
+
+.table2 {
+  margin-top: 50px;
+}
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/

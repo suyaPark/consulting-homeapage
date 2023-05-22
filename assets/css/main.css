@@ -1675,12 +1675,7 @@ section {
   text-align: center;
   padding: 15px;
 }
-<style>
-  #contact-form {
-    background-color: white;
-    background: white;
-  }
-</style>
+
 
 .contact .php-email-form .loading:before {
   content: "";

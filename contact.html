@@ -121,34 +121,93 @@
           </div><!-- End Google Maps -->
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form id="contact-form" action="https://script.google.com/macros/s/AKfycbwg_oHRaWUBPs_k7ceDqXHu0B8GJgoxNnnnch3MxKMCoxna_-1mIcaTXD2bvvweCWit/exec" method="post" role="form" class="gform" data-email="example@email.net">
               <div class="row gy-4">
                 <div class="col-lg-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required style="margin-bottom: 10px;">
                 </div>
                 <div class="col-lg-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required style="margin-bottom: 10px;">
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required style="margin-bottom: 10px;">
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required style="margin-bottom: 10px;"></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="loading" style="display: none;">Loading</div>
+                <div class="error-message" style="display: none;">An error occurred. Please try again later.</div>
+                <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <style>
+                .custom-button {
+                  background-color: #ffd565;
+                  color: #797979;
+                  border-color: #ffd565;
+                }
+              </style>
+              
+              <div class="text-center">
+                <button type="submit" class="custom-button">Send Message</button>
+              </div>
             </form>
+            <script>
+              // Get the form element
+              const contactForm = document.getElementById('contact-form');
+
+              // Add form submission event listener
+              contactForm.addEventListener('submit', function (event) {
+                // Prevent the form from submitting normally
+                event.preventDefault();
+
+                // Display the loading message
+                const loadingMessage = contactForm.querySelector('.loading');
+                loadingMessage.style.display = 'block';
+
+                // Make the form submission asynchronously using fetch or AJAX
+                fetch(contactForm.action, {
+                  method: contactForm.method,
+                  body: new FormData(contactForm)
+                })
+                  .then(function (response) {
+                    // Hide the loading message
+                    loadingMessage.style.display = 'none';
+
+                    // Check the response status
+                    if (response.ok) {
+                      // Display the success message
+                      const successMessage = contactForm.querySelector('.sent-message');
+                      successMessage.style.display = 'block';
+
+                      // Reset the form after a delay (e.g., 3 seconds)
+                      setTimeout(function () {
+                        contactForm.reset();
+                        successMessage.style.display = 'none';
+                      }, 3000);
+                    } else {
+                      // Display the error message
+                      const errorMessage = contactForm.querySelector('.error-message');
+                      errorMessage.style.display = 'block';
+                    }
+                  })
+                  .catch(function (error) {
+                    // Hide the loading message
+                    loadingMessage.style.display = 'none';
+
+                    // Display the error message
+                    const errorMessage = contactForm.querySelector('.error-message');
+                    errorMessage.style.display = 'block';
+                  });
+              });
+            </script>
+            
           </div><!-- End Contact Form -->
 
         </div>
 
       </div>
-      <form method="POST" data-email="example@email.net" class="gform" action="https://script.google.com/macros/s/AKfycbwg_oHRaWUBPs_k7ceDqXHu0B8GJgoxNnnnch3MxKMCoxna_-1mIcaTXD2bvvweCWit/exec"></form>
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->

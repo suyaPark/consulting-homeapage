@@ -1641,6 +1641,7 @@ section {
   padding-bottom: 30px;
   
 }
+
 .contact .php-email-form .form-control {
   padding-top: 20px;
   margin-top: 30px;
@@ -1674,6 +1675,12 @@ section {
   text-align: center;
   padding: 15px;
 }
+<style>
+  #contact-form {
+    background-color: white;
+    background: white;
+  }
+</style>
 
 .contact .php-email-form .loading:before {
   content: "";

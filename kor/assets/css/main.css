@@ -2644,7 +2644,7 @@ section {
 
 #kakao-talk-channel-chat-button {
   position: fixed;
-  bottom: 20px;
+  bottom: 60px;
   right: 20px;
   z-index: 9999;
 }

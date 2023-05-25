@@ -1,10 +1,4 @@
-/**
-* Template Name: UpConstruction
-* Updated: Mar 10 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
